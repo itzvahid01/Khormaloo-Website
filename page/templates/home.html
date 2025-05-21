@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خرمالو خشک ارگانیک | خور بندی</title>
+    <link rel="stylesheet" href={% static "style\home.css" %}>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>خور بندی</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">خانه</a></li>
+                    <li><a href="#products">محصولات</a></li>
+                    <li><a href="#about_us">درباره ما</a></li>
+                    <li><a href="#why_us">اعتبار ما</a></li>
+                </ul>
+            </nav>
+            <div class="cta-header">
+                <a class="btn-primary" href="tel:+989213694955">تماس با ما</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>خرمالو خشک ارگانیک</h1>
+                <p class="subtitle">طعم شیرین طبیعت، بدون هیچ افزودنی</p>
+                <p>محصولات کاملا ارگانیک، خشک شده در آفتاب در محله کن تهران</p>
+                <div class="hero-buttons">
+                    <a class="btn-primary" href="tel:+989213694955">ثبت سفارش</a>
+                    <a class="btn-secondary" href="#why_us">چرا ما؟</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src={% static "img/2.png" %} alt="خرمالو خشک ارگانیک">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="why_us">
+        <div class="container">
+            <h2>چرا خرمالو خشک ما؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="icon" src={% static "svg\plant.svg" %}>
+                    </div>
+                    <h3>۱۰۰% ارگانیک</h3>
+                    <p>کشت شده بدون استفاده از سموم و کودهای شیمیایی</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="icon" src="{% static "svg\sun.svg" %}">
+                    </div>
+                    <h3>خشک شده در آفتاب</h3>
+                    <p>فرآوری طبیعی بدون مواد نگهدارنده</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="icon" src={% static "svg\award.svg" %}>
+                    </div>
+                    <h3>کیفیت بالا</h3>
+                    <p>تولید شده در باغ های کن</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="icon" src={% static "svg\plane.svg" %}>
+                    </div>
+                    <h3>ارسال سریع</h3>
+                    <p>تحویل درب منزل در سراسر کشور</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2>محصولات ما</h2>
+      <div class="product-grid">
+            {% for product in discount %}
+                <div class="product-card">
+                    <div class="product-badge">{{ product.product_type }}</div>
+                    <img src={% static "img/2.png" %} alt="پک خانوادگی">
+                    <h3>پک {{ product.name }}</h3>
+                    <div class="product-price">
+                        <span class="price">{{ product.price }} هزار تومان</span>
+                        <span class="weight">در هر {{ product.weight }} گرم</span>
+                    </div>
+                    <button class="btn-primary">کد محصول : {{ product.pk }}</button>
+                </div>
+            {% endfor %}
+             {% for product in home %}
+                <div class="product-card">
+                    <div class="product-badge">{{ product.product_type }}</div>
+                    <img src={% static "img/2.png" %} alt="پک خانوادگی">
+                    <h3>پک {{ product.name }}</h3>
+                    <div class="product-price">
+                        <span class="price">{{ product.price }} هزار تومان</span>
+                        <span class="weight">در هر {{ product.weight }} گرم</span>
+                    </div>
+                    <button class="btn-primary">کد محصول : {{ product.pk }}</button>
+                </div>
+            {% endfor %}
+             {% for product in company %}
+                <div class="product-card">
+                    <div class="product-badge">{{ product.product_type }}</div>
+                    <img src={% static "img/2.png" %} alt="پک خانوادگی">
+                    <h3>پک {{ product.name }}</h3>
+                    <div class="product-price">
+                        <span class="price">{{ product.price }} هزار تومان</span>
+                        <span class="weight">در هر {{ product.weight }} گرم</span>
+                    </div>
+                    <button class="btn-primary">کد محصول : {{ product.pk }}</button>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+
+    </section>
+
+    <section class="testimonials" id="about_us">
+        <div class="container">
+            <h2>درباره ما</h2>
+            <p>خور بندی متخصص تولید خرمالو خشک ممتاز در شهر سرسبز کن می‌باشد. ما با دقت و ظرافت، بهترین خرمالوهای منطقه را انتخاب کرده و با روش‌های اصولی خشک می‌کنیم تا محصولی کاملاً طبیعی، خوش‌عطر و پرخاصیت به دست شما برسانیم.
+
+تعهد ما به کیفیت و سلامت، باعث شده تا خرمالو خشک خور بندی به محصولی منحصربه‌فرد تبدیل شود. از مزرعه تا سفره، نظارت دقیق بر تمام مراحل تولید داریم تا لذت یک خرمالو خشک باکیفیت را به شما هدیه دهیم.
+
+به خانواده بزرگ خور بندی بپیوندید و طعم اصیل طبیعت را با ما تجربه کنید!
+
+خور بندی - شیرینی طبیعت، سلامت زندگی!</p>
+        </div>
+    </section>
+
+    <section class="cta-section"    >
+        <div class="container">
+            <h2>آماده تجربه طعم واقعی طبیعت هستید؟</h2>
+            <p>همین حالا اولین سفارش خود را ثبت کنید و از ۱۰% تخفیف اولین خرید بهر  ه‌مند شوید!</p>
+            <button class="btn-primary">سفارش دهید</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                        <span style="color: aliceblue;">خور بندی</span>
+                    </div>
+                    <p>ارائه کننده بهترین محصولات ارگانیک و طبیعی از دل طبیعت ایران</p>
+                    <div class="social-links">
+                        <a href="https://t.me/khorbandi"><img src={% static "svg/telegram.svg" %} class="fab footer-icon"></a>
+                        <a href="https://instagram/khorbandi"><img src={% static "svg/instagram.svg" %} class="fab footer-icon"></a>
+                        <a href="https://whatsapp/khorbandi"><img src={% static "svg/whatsapp.svg" %} class="fab footer-icon"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="#home">خانه</a></li>
+                        <li><a href="#products">محصولات</a></li>
+                        <li><a href="#about_us">درباره ما</a></li>
+                        <li><a href="tel:+989213694955">تماس با ما</a></li>
+                        <li><a href="#why_us">چرا ما؟</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>تماس با ما</h3>
+                    <ul>
+                        <li> 021-44324505</li>
+                        <li></i> amirparsa7131@gmail.com</li>
+                        <li></i> تهران، کن، پایین تر از چهارراه شیدا، پلاک 52، زنگ 2 </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۱۴۰۲ کلیه حقوق برای طبیعت ناب محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
